@@ -1,0 +1,11 @@
+footer {
+    flex-shrink: 0;
+    background-color: #212529;
+    color: #ffffff;
+}
+
+/* Footer styling */
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}

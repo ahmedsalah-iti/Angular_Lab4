@@ -1,0 +1,59 @@
+/* Modern styling for the products table */
+
+
+
+.table-responsive {
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.table {
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    border: 3px solid #42484f;
+}
+
+.table thead th {
+    background: linear-gradient(135deg, #42484f, #212529);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1rem;
+    border: none;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f5f9;
+    transform: translateY(-2px);
+}
+
+.table td {
+    padding: 1rem;
+    vertical-align: middle;
+    font-size: 0.9rem;
+    color: #495057;
+    border-top: 1px solid #e9ecef;
+    border-bottom: none;
+}
+
+.table td:first-child,
+.table th:first-child {
+    border-left: none;
+}
+
+.table td:last-child,
+.table th:last-child {
+    border-right: none;
+}
+

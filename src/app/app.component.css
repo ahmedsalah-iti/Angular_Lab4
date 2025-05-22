@@ -1,0 +1,14 @@
+/* Ensure full page height with sticky footer */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+main {
+    flex: 1 0 auto;
+    padding: 2rem 0;
+}
+

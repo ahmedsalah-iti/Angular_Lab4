@@ -1,0 +1,41 @@
+<!-- Products Table Component -->
+<section class="content-card">
+    <h1 class="mb-4">Products</h1>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (product of products; track product.id) {
+                <!-- Row -->
+                <tr>
+                    <td>{{product.id}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price | currency}}</td>
+                    <td>{{product.stock}}</td>
+                    <td>{{product.category}}</td>
+                    <td style="text-align: center;">
+                        <button class="btn btn-lg btn-primary me-1" [routerLink]="['/products',product.id]"><i
+                                class="bi bi-eye"></i></button>
+                        <button class="btn btn-lg btn-warning me-1" [routerLink]="['/products',product.id,'edit']"><i
+                                class="bi bi-pencil"></i></button>
+                        <button (click)="deleteHandler(product.id)" class="btn btn-lg btn-danger"><i class="bi bi-trash3"></i></button>
+                    </td>
+                </tr>
+                }@empty {
+                        <h1 class="text-danger mx-3">There is no Products yet !</h1>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+</section>

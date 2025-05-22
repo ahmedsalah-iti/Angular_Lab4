@@ -1,0 +1,45 @@
+<!-- Edit Product Form Component -->
+<section class="content-card">
+    <h1 class="mb-4"><i class="bi bi-pencil-fill me-2"></i>Edit Product</h1>
+    @if(currentProduct){
+
+    
+    <form>
+        <div class="mb-3">
+            <label for="productId" class="form-label"><i class="bi bi-hash me-2"></i>ID</label>
+            <input type="text" class="form-control" id="productId" [(ngModel)]="currentProduct.id" name="productid" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="productName" class="form-label"><i class="bi bi-tag-fill me-2"></i>Name</label>
+            <input type="text" class="form-control" id="productName" [(ngModel)]="currentProduct.name" name="productname" placeholder="Enter product name" required>
+        </div>
+        <div class="mb-3">
+            <label for="productPrice" class="form-label"><i class="bi bi-currency-dollar me-2"></i>Price</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
+                <input type="number" class="form-control" id="productPrice" [(ngModel)]="currentProduct.price" name="productprice" placeholder="0.00" step="0.01" min="0" required>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="productStock" class="form-label"><i class="bi bi-box-seam-fill me-2"></i>Stock</label>
+            <input type="number" class="form-control" id="productStock" [(ngModel)]="currentProduct.stock" name="productstock" placeholder="Enter stock quantity" min="0" required>
+        </div>
+        <div class="mb-3">
+            <label for="productCategory" class="form-label"><i class="bi bi-list-ul me-2"></i>Category</label>
+            <select [(ngModel)]="currentProduct.category" name="productcategory" class="form-select" id="productCategory" required>
+                <option value="" disabled>Select a category</option>
+                @for (category of getCategories(); track category) {
+                    <option [value]="category" >{{category}}</option>
+                }
+            </select>
+        </div>
+        <div class="d-flex justify-content-end gap-2">
+            <button (click)="editHandler()" type="submit" class="btn btn-primary"><i class="bi bi-save me-2"></i>Save Changes</button>
+            <a [routerLink]="['/products','1']" class="btn btn-secondary"><i class="bi bi-arrow-left-circle me-2"></i>Cancel</a>
+        </div>
+    </form>
+}@else {
+    <h1 class="text-danger">invalid product id.</h1>
+    <a [routerLink]="['/products','1']" class="btn btn-secondary"><i class="bi bi-arrow-left-circle me-2"></i>Cancel</a>
+}
+</section>

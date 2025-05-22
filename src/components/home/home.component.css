@@ -1,0 +1,22 @@
+
+
+/* Main content styling */
+.content-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-card h1 {
+    color: #343a40;
+    font-weight: 700;
+}
+
+.content-card p {
+    color: #6c757d;
+    line-height: 1.6;
+}
+
